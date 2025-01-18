@@ -179,6 +179,7 @@ EOF
 main() {
     configure_server
     configure_client
+    systemctl restart xray
     vless_reality_url="vless://$uuid@$server_ip:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&sni=www.google-analytics.com&fp=chrome&pbk=$public_key&sid=$shortId&spx=/&#XRAY_SERVER"
     echo "VLESS=$vless_reality_url"
 }
